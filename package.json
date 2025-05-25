@@ -1,0 +1,16 @@
+{
+  "name": "04-ddd-clean-architecture",
+  "version": "1.0.0",
+  "description": "- Uma forma de conseguir manter uma conexão muito clara e padronizada entre todas as partes do desenvolvimento de uma aplicação - Metodologia para design de software - Design de Software => uma forma de converter um problema real em software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3"
+  }
+}
