@@ -28,3 +28,9 @@
 
 ### Casos de Uso
 - Representam as ``ações`` (verbos) ou ``comportamentos do sistema`` que coordenam entidades, regras de negócio e outras operações para atingir um objetico específico
+
+
+### Getters e Setters
+
+- Servem como portas de entrada e saída da Entidade, fazendo com que se possa proteger algumas propriedades, ou seja, não dar acesso à modificação, apenas acesso de busca
+- Validação ou Manipulação dos dados antes de serem expostos pela Classe
