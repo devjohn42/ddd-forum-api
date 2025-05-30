@@ -34,3 +34,5 @@
 
 - Servem como portas de entrada e saída da Entidade, fazendo com que se possa proteger algumas propriedades, ou seja, não dar acesso à modificação, apenas acesso de busca
 - Validação ou Manipulação dos dados antes de serem expostos pela Classe
+
+## Clean Architecture
