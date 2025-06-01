@@ -1,4 +1,4 @@
-import { AnswersRepository } from '@/domain/forum/application/repositories/answer-repository'
+import { AnswersRepository } from '@/domain/forum/application/repositories/answers-repository'
 import { Answer } from '@/domain/forum/enterprise/entities/answer'
 
 export class InMemoryAnswersRepository implements AnswersRepository {
@@ -6,5 +6,21 @@ export class InMemoryAnswersRepository implements AnswersRepository {
 
   async create(answer: Answer) {
     this.answers.push(answer)
+  }
+
+  async findById(id: string) {
+    const answer = this.answers.find((a) => a.id.toString() === id)
+
+    if (!answer) {
+      return null
+    }
+
+    return answer
+  }
+
+  async delete(answer: Answer) {
+    const answerIndex = this.answers.findIndex((a) => a.id === answer.id)
+
+    this.answers.splice(answerIndex, 1)
   }
 }
