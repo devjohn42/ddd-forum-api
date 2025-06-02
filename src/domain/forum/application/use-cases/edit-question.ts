@@ -21,7 +21,7 @@ export class EditQuestionUseCase {
     const question = await this.questionRepository.findById(questionId)
 
     if (!question) {
-      throw new Error('Qquestion not found.')
+      throw new Error('Question not found.')
     }
 
     if (authorId !== question.authortId.toString()) {
