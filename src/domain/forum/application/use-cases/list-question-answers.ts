@@ -17,7 +17,7 @@ export class ListQuestionAnswersUseCase {
     questionId,
     page,
   }: ListQuestionAnswersRequest): Promise<ListQuestionAnswersResponse> {
-    const answers = await this.answersRepository.findManyByQuestionId(
+    const answers = await this.answersRepository.findManyByAnswerId(
       questionId,
       { page },
     )
