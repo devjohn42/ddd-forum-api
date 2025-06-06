@@ -1,29 +1,29 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { QuestionComment } from '../../enterprise/entities/question-comment'
-import { QuestionCommentsRepository } from '../repositories/question-comments-repository'
+import { QuestionCommentRepository } from '../repositories/question-comments-repository'
 import { QuestionsRepository } from '../repositories/questions-repository'
 
-interface CommentOnQuestionsUseCaseRequest {
+interface CommentOnQuestionUseCaseRequest {
   authorId: string
   questionId: string
   content: string
 }
 
-interface CommentOnQuestionsUseCaseResponse {
+interface CommentOnQuestionUseCaseResponse {
   questionComment: QuestionComment
 }
 
-export class CommentOnQuestionsUseCase {
+export class CommentOnQuestionUseCase {
   constructor(
     private questionsRepository: QuestionsRepository,
-    private questionCommentsRepository: QuestionCommentsRepository,
+    private questionCommentsRepository: QuestionCommentRepository,
   ) {}
 
   async execute({
     authorId,
     questionId,
     content,
-  }: CommentOnQuestionsUseCaseRequest): Promise<CommentOnQuestionsUseCaseResponse> {
+  }: CommentOnQuestionUseCaseRequest): Promise<CommentOnQuestionUseCaseResponse> {
     const question = await this.questionsRepository.findById(questionId)
 
     if (!question) {
