@@ -6,7 +6,7 @@ import { ListQuestionAnswersUseCase } from './list-question-answers'
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let sut: ListQuestionAnswersUseCase
 
-describe('List QQuestion Answers', () => {
+describe('List Question Answers', () => {
   beforeEach(() => {
     inMemoryAnswersRepository = new InMemoryAnswersRepository()
     sut = new ListQuestionAnswersUseCase(inMemoryAnswersRepository)
