@@ -25,7 +25,7 @@ export class EditAnswerUseCase {
       throw new Error('Answer not found.')
     }
 
-    if (authorId !== answer.authortId.toString()) {
+    if (authorId !== answer.authorId.toString()) {
       throw new Error('Not allowed.')
     }
 

@@ -22,7 +22,7 @@ export class CreateQuestionUseCase {
     content,
   }: CreateQuestionUseCaseRequest): Promise<CreateQuestionUseCaseResponse> {
     const question = Question.create({
-      authortId: new UniqueEntityID(authorId),
+      authorId: new UniqueEntityID(authorId),
       title,
       content,
     })

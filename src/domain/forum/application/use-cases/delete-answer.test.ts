@@ -15,7 +15,7 @@ describe('Delete Answer', () => {
   it('should be able to delete a answer', async () => {
     const newAnswer = makeAnswer(
       {
-        authortId: new UniqueEntityID('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
       new UniqueEntityID('answer-1'),
     )
@@ -33,7 +33,7 @@ describe('Delete Answer', () => {
   it('should not be able to delete a answer from another user', async () => {
     const newAnswer = makeAnswer(
       {
-        authortId: new UniqueEntityID('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
       new UniqueEntityID('answer-1'),
     )

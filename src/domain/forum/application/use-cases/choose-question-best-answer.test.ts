@@ -31,7 +31,7 @@ describe('Choose Question Best Answer', () => {
 
     await sut.execute({
       answerId: answer.id.toString(),
-      authorId: question.authortId.toString(),
+      authorId: question.authorId.toString(),
     })
 
     expect(inMemoryQuestionsRepository.questions[0].bestAnswerId).toEqual(
@@ -41,7 +41,7 @@ describe('Choose Question Best Answer', () => {
 
   it('should not be able to choose another user question best answer', async () => {
     const question = makeQuestion({
-      authortId: new UniqueEntityID('author-1'),
+      authorId: new UniqueEntityID('author-1'),
     })
     const answer = makeAnswer({
       questionId: question.id,

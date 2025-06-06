@@ -20,7 +20,7 @@ export class DeleteAnswerUseCase {
       throw new Error('Qanswer not found.')
     }
 
-    if (authorId !== answer.authortId.toString()) {
+    if (authorId !== answer.authorId.toString()) {
       throw new Error('Not allowed.')
     }
     await this.answerRepository.delete(answer)
