@@ -36,3 +36,12 @@
 - Validação ou Manipulação dos dados antes de serem expostos pela Classe
 
 ## Clean Architecture
+
+## Aggregate
+
+- Trabalhadas juntas, na criação/atualização/remoção
+- Conjunto de entidades que são manipuladas ao mesmo tempo e elas juntas compõem algo maior
+
+## WatchedList
+
+- Uma classe que permite ter mais informações sobre items contidos em uma lista
