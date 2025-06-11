@@ -7,10 +7,8 @@ interface SendNotificationUseCaseRequest {
   recipientId: string
   title: string
   content: string
-  attachmentsIds: string[]
 }
 
-// retornar como objeto, para caso seja necessário, retornar mais informações
 type SendNotificationUseCaseResponse = Either<
   null,
   {

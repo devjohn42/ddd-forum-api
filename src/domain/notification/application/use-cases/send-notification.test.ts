@@ -15,7 +15,6 @@ describe('Create Notification', () => {
       recipientId: '1',
       title: 'Nova notificação',
       content: 'Conteúdo da notificação',
-      attachmentsIds: ['1', '2'],
     })
 
     expect(result.isRight()).toBe(true)
