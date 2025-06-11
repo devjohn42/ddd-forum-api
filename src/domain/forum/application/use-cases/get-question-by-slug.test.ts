@@ -1,15 +1,21 @@
 import { makeQuestion } from 'test/factories/make-question'
+import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository'
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
 import { Slug } from '../../enterprise/entities/value-objects/slug'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
 import { GetQuestionBySlugUseCase } from './get-question-by-slug'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
+let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
 let sut: GetQuestionBySlugUseCase
 
 describe('Get Question By Slug', () => {
   beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    inMemoryQuestionAttachmentsRepository =
+      new InMemoryQuestionAttachmentsRepository()
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+      inMemoryQuestionAttachmentsRepository,
+    )
     sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository)
   })
 
@@ -24,11 +30,16 @@ describe('Get Question By Slug', () => {
       slug: 'example-question',
     })
 
-    if ('question' in result.value) {
-      expect(result.value.question.id).toBeTruthy()
-      expect(result.value.question.title).toEqual(newQuestion.title)
-    } else {
-      return new ResourceNotFoundError()
-    }
+    expect(result.value).toMatchObject({
+      question: expect.objectContaining({
+        title: newQuestion.title,
+      }),
+    })
+
+    // verificação para realizar as verificações abaixo
+    if (!('question' in result.value)) return new ResourceNotFoundError()
+
+    expect(result.value?.question.id).toBeTruthy()
+    expect(result.value?.question.title).toEqual(newQuestion.title)
   })
 })
