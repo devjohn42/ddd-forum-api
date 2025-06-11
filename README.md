@@ -45,3 +45,29 @@
 ## WatchedList
 
 - Uma classe que permite ter mais informações sobre items contidos em uma lista
+
+## Subdomains
+
+- Core: O que dá dinheiro
+- Supporting: Dá suporte para o core funcionar
+- Generic: São necessários, mas não são tão importantes
+
+### Exemplos
+
+#### Core
+
+- Compra
+- Catálogo
+- Pagamento
+- Entrega
+- Faturamento
+
+#### Supporting
+
+- Estoque
+
+#### Generic
+
+- Notificação ao cliente
+- Promoções
+- Chat
