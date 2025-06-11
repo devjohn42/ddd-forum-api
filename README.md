@@ -71,3 +71,7 @@
 - Notificação ao cliente
 - Promoções
 - Chat
+
+## Pub/Sub => Publish/Subscribe
+
+- Estrutura que permite a realização de comunicação entre duas partes de um sistema de um maneira que elas não se conheçam
